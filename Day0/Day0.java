@@ -1,6 +1,6 @@
-
 import java.util.*;
 
+/**
 class Day0{
     public static void main(String args[]) {
         
@@ -9,12 +9,12 @@ class Day0{
 
         // single line comment
 
-        /**
+        
          * 
          * 
          * milti line comments
          * 
-         */
+         
 
         //  variable  and data types
         // syntax : dataTypes name = value ;
@@ -47,5 +47,30 @@ class Day0{
     }
 }
 
+
+
+
+
+ */
+
+
+class Day0{
+    public static void main(String args[]){
+        System.out.println("today is not raining..");
+        int year = 2025;
+        String name  = "ritam";
+        boolean isMonday = false;
+
+        Scanner sc  = new Scanner(System.in);
+        String input = sc.nextLine();
+        Integer.parseInt("10");
+        int num1 = 2;
+        int num2 = 3;
+        sum(num1 , num2);   // arguments
+    }
+    public static int sum(int num1 , int num2) { // parameter 
+        return num1 + num1;
+    }
+}
 
 
