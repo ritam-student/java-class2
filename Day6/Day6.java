@@ -1,3 +1,5 @@
+
+
 public class Day6 {
     public static void main(String[] args) {
         /// create a 2D array
@@ -55,5 +57,24 @@ public class Day6 {
         }
         System.out.println(str);
 
+
+
+    }
+
+    /**
+     * 
+     * print all the characters of your name
+     * 
+     * 1. take the name from the user
+     * 2. store it inside a variable
+     * 3. iterate over each character and print them (inside a function)
+     * 
+     */
+
+    public static void printAllCharacters(String name){
+        for (int i=0; i <name.length(); i++){
+            System.out.print(name.charAt(i) + " ");
+        }
+        System.out.println();
     }
 }
