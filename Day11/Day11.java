@@ -225,8 +225,10 @@ class Day11 {
             right++;
         }
 
-        for (int i=0; i<temp.length; i++) {
-            arr[i] = temp[i];
+        k = si;
+        for (int i=0;  i<temp.length; i++) {
+            arr[k] = temp[i];
+            k++;
         }
 
     }
