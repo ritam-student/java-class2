@@ -15,6 +15,107 @@ class Day15 {
 
     }
 
+    static class CircularLL{
+        class Node {
+            int data;
+            Node next;
+            public Node (int data){
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+        public static Node head;
+        public static Node tail;
+
+        public void addFirst(int data){
+            // 1. create a new node
+            Node newNode = new Node(data);
+
+            // 2. check the condition
+            if (head == null){
+                head = tail = newNode;
+                return;
+            }
+
+            newNode.next = head;
+            head = newNode;
+            tail.next = head;
+
+        }
+
+        public void addLast(int data){
+            // 1. create a new node
+            Node newNode = new Node(data);
+
+            if (head == null){
+                head = tail = newNode;
+                return;
+            }
+
+            // 3. 
+            tail.next = newNode;
+            tail = newNode;
+            tail.next = head;
+        }
+
+        public int removeFirst(){
+            if (head == null){
+                System.out.println("LL is empty...");
+                return Integer.MIN_VALUE;
+            }
+
+            if (head.next == null){
+                int val = head.data;
+                head = tail = null;
+                return val;
+            }
+
+            int val = head.data;
+            head = head.next;
+            tail.next = head;
+            return val;
+        }
+
+        public int removeLast(){
+            if (head == null){
+                System.out.println("LL is empty...");
+                return Integer.MIN_VALUE;
+            }
+
+            if (head.next == null){
+                int val = head.data;
+                head = tail = null;
+                return val;
+            }
+
+            int val = tail.data;
+
+            Node temp = head;
+            while (temp.next.next != null){
+                temp = temp.next;
+            }
+
+            temp.next = head;
+            tail = temp;
+            return val;
+        }
+
+        public void printElements(){
+            if (head == null){
+                System.out.println("LL is empty...");
+                return;
+            }
+            Node temp = head;
+
+            while (temp.next != head){
+                System.out.print(temp.data+"->");
+            }
+            System.out.print(temp.data);
+            System.out.println();
+        }
+    }
+
     static class DoublyLL{
         class Node {
             int data;
@@ -30,6 +131,25 @@ class Day15 {
 
         public static Node head;
         public static Node tail;
+
+        // reverse a doubly LL
+        public void reverse(){
+            /// create 3 var
+            Node prev = null;
+            Node curr = head;
+            Node next;
+
+            while (curr != null){
+                next = curr.next;
+                curr.next = prev;
+                curr.prev = next;
+                prev = curr;
+                curr = next;
+            }
+
+            head = prev;
+
+        }
 
         public void addFirst(int data){
             // 1. create a new Node
