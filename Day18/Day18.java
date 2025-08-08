@@ -1,5 +1,4 @@
 import java.util.*;
-import javax.smartcardio.ATR;
 
 class Day18 {
     public static void main(String args[]){
